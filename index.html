@@ -11,11 +11,14 @@
     <script>
       function showAlert() {
         navigator.geolocation.getCurrentPosition(function(position){
-          alert("Latitude: " +
-                position.coords.latitude +
-                "\nLongitude: " +
-                position.coords.longitude
-                );
+          let lat =
+            position.coords.latitude;
+          let lon =
+            position.coords.longitude;
+          window.open(
+            "https://www.google.com/maps?q=" +
+            lat +"," + lon
+            );
         });
       }
     </script>
