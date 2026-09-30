@@ -10,7 +10,13 @@
     <button onclick="showAlert()">SOS</button>
     <script>
       function showAlert() {
-        alert("Emergency Alert Activated!");
+        navigator.geolocation.getCurrentPosition(function(position){
+          alert("Latitude: " +
+                position.coords.latitude +
+                "\nLongitude: " +
+                position.coords.longitude
+                );
+        });
       }
     </script>
   </body>
